@@ -80,3 +80,11 @@ footer.page-footer {
 .subtitulo{
 	font-weight: bold;
 }
+.hoy-wrapper{
+    background-image: url("hoy01.jpg");
+	background-size: cover;
+	
+}
+.main-subtitle{
+	color: white;
+}
