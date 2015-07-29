@@ -74,17 +74,28 @@ footer.page-footer {
 	.center-btn 
 	{ text-align: center;
 	  vertical-align: middle;
-	   }
+	}
 .no-margin{
 	margin:0 !important;}
 .subtitulo{
 	font-weight: bold;
-}
+	}
 .hoy-wrapper{
     background-image: url("hoy01.jpg");
 	background-size: cover;
 	
 }
+.manana-wrapper{
+    background-image: url("manana01.jpg");
+	background-size: cover;
+}
+.semana-wrapper{
+    background-image: url("semana01.jpg");
+	background-size: cover;
+}
 .main-subtitle{
 	color: white;
 }
+.main-row{
+	padding: 40px;
+	}
