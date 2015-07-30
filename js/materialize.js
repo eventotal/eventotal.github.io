@@ -2836,6 +2836,19 @@ $(document).ready(function(){
       // Transitions the caption depending on alignment
       function captionTransition(caption, duration) {
         if (caption.hasClass("center-align")) {
+          caption.velocity({opacity: 100, translateY: 0}, {duration: duration, queue: false});
+        }
+        else if (caption.hasClass("right-align")) {
+          caption.velocity({opacity: 100, translateX: 0}, {duration: duration, queue: false});
+        }
+        else if (caption.hasClass("left-align")) {
+          caption.velocity({opacity: 100, translateX: 0}, {duration: duration, queue: false});
+        }
+      }
+	  
+/*	    //original configuration, edit by fega
+		function captionTransition(caption, duration) {
+        if (caption.hasClass("center-align")) {
           caption.velocity({opacity: 0, translateY: -100}, {duration: duration, queue: false});
         }
         else if (caption.hasClass("right-align")) {
@@ -2844,7 +2857,7 @@ $(document).ready(function(){
         else if (caption.hasClass("left-align")) {
           caption.velocity({opacity: 0, translateX: -100}, {duration: duration, queue: false});
         }
-      }
+      }*/
 
       // This function will transition the slide to any index of the next slide
       function moveToSlide(index) {

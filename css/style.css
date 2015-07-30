@@ -102,3 +102,14 @@ footer.page-footer {
 .padding-btn{
 	padding: 10px !important;
 	}
+.slider-landing{
+    z-index: -10;
+}
+.slider.fullscreen {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    /* top: 0; */
+    left: 0;
+    right: 0;
+    /* bottom: 0;
