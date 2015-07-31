@@ -104,12 +104,11 @@ footer.page-footer {
 	}
 .slider-landing{
     z-index: -10;
-}
-.slider.fullscreen {
-    height: 100%;
+	height: 400px;
     width: 100%;
-    position: absolute;
+    position: relative;
     /* top: 0; */
     left: 0;
     right: 0;
     /* bottom: 0;
+}
