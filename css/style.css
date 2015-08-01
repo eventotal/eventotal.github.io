@@ -121,10 +121,13 @@ footer.page-footer {
 	background-color:rgba(0,0,0,0.5);
 	padding: 40px;
 }
-.caption-amber{
-	background-color:rgba(255, 111, 0,0.5);
-	margin: 40px;
-	-webkit-border-radius: 15px;
-	-moz-border-radius: 15px;
-	border-radius: 15px;
+.caption.dark{
+	background-color:rgba(0,0,0,0.8);
+		-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	border-radius: 8px;
+}
+
+.slider-landing{
+	height: 800px !important;;
 }
