@@ -7884,7 +7884,7 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
   text-align: center;
   text-transform: uppercase;
   color: #666; }
-
+		
 .picker--time .picker__button--clear:hover, .picker--time .picker__button--clear:focus {
   color: #000000;
   background: #b1dcfb;
@@ -7892,7 +7892,8 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
   border-color: #ee2200;
   cursor: pointer;
   color: #ffffff;
-  outline: none; }
+  outline: none; 
+}
 
 .picker--time .picker__button--clear:before {
   top: -0.25em;
