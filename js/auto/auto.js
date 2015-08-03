@@ -11,3 +11,6 @@ var titulo = "eventos de bucaramanga, Agosto de 2015";
 document.getElementById("metatitulo").innerHTML = metatitulo;
 document.getElementById("metadescripcion").innerHTML = metadescripcion;
 document.getElementById("titulo").innerHTML = titulo;
+
+
+document.getE

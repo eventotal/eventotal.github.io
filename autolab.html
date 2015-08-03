@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-		 <head>
+	<head>
 		 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 		 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
 		 <title>EVENTOS BGA: HOY</title>
@@ -18,34 +18,44 @@
 			 ga('send', 'pageview');
 		 </script>
 	</head>
-              <div class="section  pink darken-2 no-pad-bot no-pad-top">
-                <div class="container">
-                        <div class="row" style="margin-bottom: 0;">
-                                <div class="col s12 m4 l4">
-                                        <img class="center-img" width="120" src="logo-eventotal.png"></img>
-                                </div>
-								<div class="col s12 m4 l4 center padding-btn">        
-                                        <a class="link-evento" href="http://goo.gl/forms/CWGbR3Dr8J" style="color:white;" >
-                                        <i class="material-icons tiny" >launch</i>
-                                        <span class="valign" style="text-align: center; line-height: 130%; color:white;">Entérate siempre,<br> Inscríbete</a></span>
-                                </div>
-                                <div class="col s12 m4 l4 center padding-btn">        
-                                        <a class="link-evento" href="http://goo.gl/forms/lb8llZG8GG" style="color:white;" >
-                                        <i class="material-icons tiny" >launch</i>
-                                        <span class="valign " style="text-align: center; line-height: 130%; color:white;">Envia tu evento</a></span>
-                                </div>
-								
-                        </div>
-                </div>
-        </div>
-        <div class="section">
-                <div class="container">
-                        <div class="row no-margin">
-							<div class="col s12 m8 l8">
-									<h4>Compartiendo experiencias</h4>
-							</div>
-                        </div>
-                </div>
-        </div>
-	
+	<body>
+<!--HEADER-->
+		<div class="section  pink darken-2 no-pad-bot no-pad-top">
+			<div class="container">
+				<div class="row" style="margin-bottom: 0;">
+					<div class="col s12 m2 l2">
+						<img class="center-img" width="120" src="logo-eventotal.png"></img>
+					</div>
+				</div>
+			</div>
+		</div>
+<!--NOMBRE SECCION-->
+		<div class="section">
+			<div class="container">
+				<div class="row">
+					<div class="col s12 m12 l12">
+						EVENTOS AUTOLAB.
+					</div>
+				</div>
+			</div>
+		</div>
+<!--LOS EVENTOS VAN AQUI-->
+		<script>
+			//inicio el XML Http request
+			var xmlhttp = new XMLHttpRequest();
+			//le digo cual es la ubicacion de mis eventos
+			var url="autolab.json";
+			//verifica que el servidor puede colaborarme
+			xmlhttp.onreadystatechange = function() {
+			if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+        	myFunction(xmlhttp.responseText);
+    		}
+			//le digo que quiero obtener la data del json
+			xmlhttp.open("GET", url, true);
+			//envio la peticion
+			xmlhttp.send();
+			
+			
+		</script>
+
 </html>
