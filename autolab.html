@@ -40,11 +40,22 @@
 			</div>
 		</div>
 <!--LOS EVENTOS VAN AQUI-->
+		<div class="section">
+			<div class="container">
+				<div class="row">
+					<div class="col s12 m12 l12" id="zona-eventos">
+						esto deberia cambiar						
+					</div>
+				</div>
+			</div>
+		</div>
+	
+<!--ESCRIPT DE EVENTOS AUTOMATICOS-->
 		<script>
 			//inicio el XML Http request
 			var xmlhttp = new XMLHttpRequest();
 			//le digo cual es la ubicacion de mis eventos
-			var url="autolab.json";
+			var url="data/eventos.json";
 			//verifica que el servidor puede colaborarme
 			xmlhttp.onreadystatechange = function() {
 			if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
@@ -55,7 +66,26 @@
 			//envio la peticion
 			xmlhttp.send();
 			
-			
+			//con la informacion de respuesta a la peticion. hago un "parse"
+			function myFunction(response) {
+				var obj = JSON.parse(response);
+				var arr = obj.eventos;//nombre del objeto mas grande, para nosotros, "eventos"
+				var i;
+				var out = "<table><tr><th>LO LOGREEEE MUAJAJAJ</th><th>ttNombre</th><th>fecha</th></tr>";
+				//itero para generar el codigo
+				for(i = 0; i < arr.length; i++) {
+					out += "<tr><td>" + 
+					arr[i].nombre +
+					"</td><td>" +
+					arr[i].ttNombre +
+					"</td><td>" +
+					arr[i].fecha +
+					"</td></tr>";
+				}	
+				out += "</table>"
+				//envio la salida al sitio del html donde deseo.
+				document.getElementById("zona-eventos").innerHTML = out;
+				console.log(out);*/
 		</script>
-
+	</body>
 </html>
