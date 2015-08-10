@@ -1,80 +1,143 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-		 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
-		 <title>EVENTOTAL AUTOLAB</title>
-		 <!-- CSS  -->
-		 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-		 <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-		 <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-		 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
-		 
-		 <meta http-equiv="expires" content="0"/>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+		<title>EVENTOTAL AUTOLAB</title>
+		<!-- CSS  -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+		<link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+
+		<meta http-equiv="expires" content="0"/>
 	</head>
 	<body>
-<!--HEADER-->
+		<!--HEADER-->
 		<div class="section  pink darken-2 no-pad-bot no-pad-top">
 			<div class="container">
 				<div class="row" style="margin-bottom: 0;">
 					<div class="col s12 m2 l2">
 						<img class="center-img" width="120" src="logo-eventotal.png"></img>
-					</div>
 				</div>
 			</div>
 		</div>
-<!--NOMBRE SECCION-->
-		<div class="section">
-			<div class="container">
-				<div class="row">
-					<div class="col s12 m12 l12">
-						EVENTOS AUTOLAB.
-					</div>
+		</div>
+	<!--NOMBRE SECCION-->
+	<div class="section">
+		<div class="container">
+			<div class="row">
+				<div class="col s12 m12 l12">
+					EVENTOS AUTOLAB.
 				</div>
 			</div>
 		</div>
-<!--LOS EVENTOS VAN AQUI-->
-		<div class="section">
-			<div class="container">
-				<div class="row">
-					<div class="col s12 m12 l12" id="zona-eventos">
-						esto deberia cambiar						
-					</div>
-				</div>
-			</div>
-		</div>
-	
-<!--ESCRIPT DE EVENTOS AUTOMATICOS-->
-		<script>
-			//inicio el XML Http request
-			var xmlhttp = new XMLHttpRequest();
-			//le digo cual es la ubicacion de mis eventos
-			var url = "http://www.eventotal.co/data/eventos.json";
-			//verifica que el servidor puede colaborarme
-			xmlhttp.onreadystatechange = function() {
-				if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-        		myFunction(xmlhttp.responseText);
-    			}
+	</div>
+	<!--LOS EVENTOS VAN AQUI-->
+	<div class="col s12 m12 l12" id="seccion-eventos">
+		esto deberia cambiar						
+	</div>
+
+	<!--SCRIPT DE EVENTOS AUTOMATICOS-->
+	<script>
+		//	JSON OBJECT, PARA GENERAR LOS EVENTOS
+		var eventos =[
+			{
+				"nombre" 	: "Rumba:Grito de independencia",
+				"miniatura"	: "images/plan.jpg",
+				"ttNombre" 	: "#Rumba:Grito de independencia",
+				"fecha" 	: "sábado 18 de julio",
+				"otrasFechas" : "AJA",
+				"hora" 		: "X hora",
+				"precio" 	: "10000",
+				"Enlace" 	: "enlace",
+				"lugar"		: "jejeje",
+				"ttLugar"	: "mmm",
+				"contacto" 	: "523434 ",
+				"URLImagen"	: "images/plan.jpg",
+				"descripcion": "una rum,bita ahi",
+				"categoria"	:"rumba",
+				"Hashtag"	:"#rumba",
+			},
+			{
+				"nombre" 	: "Media Maraton Bucaramanga",
+				"miniatura"	: "images/plan.jpg",
+				"ttNombre" 	: "@mediamaratonbga",
+				"fecha" 	: "domingo 13 de septiembre ",
+				"otrasFechas" : "no se",
+				"hora" 		: "X hora",
+				"precio" 	: "50000",
+				"Enlace" 	: "enlaceMarathon",
+				"lugar"		: "la rontonda al lado del Kai",
+				"ttLugar"	: "@LarotondaSegura",
+				"telefono" 	: "523434 ",
+				"URLImagen"	: "images/plan.jpg",
+				"descripcion": "una maraton, tio.",
+				"categoria"	:"deporte",
+				"Hashtag"	:"#MaratonBga",
 			}
-			//le digo que quiero obtener la data del json
-			xmlhttp.open("GET", url, true);
-			//envio la peticion
-			xmlhttp.send();
-			
-			//con la informacion de respuesta a la peticion. hago un "parse"
-			function myFunction(response) {
-				var obj = JSON.parse(response);
-				var arr = obj.eventos;//nombre del objeto mas grande, para nosotros, "eventos"
-				var i;
-				var out = "<table><tr><th>LO LOGREEEE MUAJAJAJ</th><th>ttNombre</th><th>fecha</th></tr>";
-				//itero para generar el codigo
-				for(i = 0; i < arr.length; i++) {
-					out += "<tr><td>" + arr[i].nombre +"</td><td>" +arr[i].ttNombre +"</td><td>" +arr[i].fecha +"</td></tr>";
-				}	
-				out += "</table>"
-				//envio la salida al sitio del html donde deseo.
-				document.getElementById("zona-eventos").innerHTML = out;
+		];
+		// OBJETO para el html
+		var formato={
+			"f1" 	: '<div class="section grey lighten-3 collapsible-header collapsible"><div class="container" ><ul class="collapsible z-depth-0 no-padding no-margin"><li><div class="row collapsible-header" style="margin-bottom: 0;"><div class="col s12 m3 l3 center"><img class="responsive-img" width="150" height="150" src="',
+			//miniatura
+			"f2" 	: '"></img></div><div class="col s12 m6 l6 center"><h5>',
+			//nombre
+			"f3"	: '<br>',
+			//fecha
+			"f4"	: '</h5></div><div class="col s12 m3 l3 center-btn"><a class="btn-floating btn-large waves-effect waves-light amber darken-2 center-btn ">+info</a></div></div><div class="collapsible-body purple lighten-5 z-depth-1"><div class="row no-margin"><div class="col s12 m6 l6" style="padding:20px;"><div><span class="subtitulo">Fechas:</span>',
+			//otras fechas
+			"f5"	: '</div><div><span class="subtitulo">Hora:</span>',
+			//hora
+			"f6"	: '</div><div><span class="subtitulo">Precio:</span>',
+			//precio
+			"f7"	: '</div><div><span class="subtitulo">Lugar:</span>',
+			//lugar
+			"f8"	: '</div><div><span class="subtitulo">Contacto:</span>',
+			//contacto
+			"f9"	: '</div><p class="no-padding">',
+			//descripcion
+			"f10"	: '</p></div><div class="col s12 m6 l6 no-padding"><img class="responsive-img" src="',
+			//imagen
+			"f11"	: '"></div>/div></div></li></ul></div></div>',
+		};
+
+		//llamo la funcion que genera el codigo HTML
+		genEventos(eventos,formato);
+
+		function genEventos(input,form){
+			var out ="";//string, vacio al iniciar
+			var i;//nuestro iterador...
+
+			for(i=0; i < input.length; i++){//bucle que genera el html
+				out += form.f1;
+				out += input[i].miniatura;
+				out += form.f2;
+				out += input[i].nombre;
+				out += form.f3;
+				out += input[i].fecha;
+				out += form.f4;
+				out += input[i].otrasFechas;
+				out += form.f5;
+				out += input[i].hora;
+				out += form.f6;
+				out += input[i].precio;
+				out += form.f7;
+				out += input[i].lugar;
+				out += form.f8;
+				out += input[i].contacto;
+				out += form.f9;
+				out += input[i].descripcion;
+				out += form.f10;
+				out += input[i].URLImagen;
+				out += form.f11;
 			}
-		</script>
+			document.getElementById("seccion-eventos").innerHTML = out;
+		}
+
+	</script>
+	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<script src="js/materialize.js"></script>
+	<script src="js/init.js"></script>
 	</body>
 </html>
