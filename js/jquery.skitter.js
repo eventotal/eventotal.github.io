@@ -54,7 +54,7 @@
     time_interval:      null,
 
     // Image link (internal)
-    images_links:       null,
+    imagenes_links:       null,
 
     // Actual image (internal)
     image_atual:      null,
@@ -129,7 +129,7 @@
     onLoad:         null,
 
     // Function call to change image
-    imageSwitched:      null,
+    imageneswitched:      null,
 
     // @deprecated
     max_number_height:    20,
@@ -283,11 +283,11 @@
       this.box_skitter.find('.label_skitter').width(width_label);
       
       var initial_select_class = ' image_number_select', u = 0;
-      this.settings.images_links = new Array();
+      this.settings.imagenes_links = new Array();
       
       // Add image, link, animation type and label
       var addImageLink = function (link, src, animation_type, label, target) {
-        self.settings.images_links.push([src, link, animation_type, label, target]);
+        self.settings.imagenes_links.push([src, link, animation_type, label, target]);
         if (self.settings.thumbs) {
           var dimension_thumb = '';
           if (self.settings.width_skitter > self.settings.height_skitter) {
@@ -465,14 +465,14 @@
       this.box_skitter.find('ul').hide();
       
       if (this.settings.show_randomly)
-      this.settings.images_links.sort(function(a,b) {return Math.random() - 0.5;});
+      this.settings.imagenes_links.sort(function(a,b) {return Math.random() - 0.5;});
       
-      this.settings.image_atual   = this.settings.images_links[0][0];
-      this.settings.link_atual  = this.settings.images_links[0][1];
-      this.settings.label_atual   = this.settings.images_links[0][3];
-      this.settings.target_atual  = this.settings.images_links[0][4];
+      this.settings.image_atual   = this.settings.imagenes_links[0][0];
+      this.settings.link_atual  = this.settings.imagenes_links[0][1];
+      this.settings.label_atual   = this.settings.imagenes_links[0][3];
+      this.settings.target_atual  = this.settings.imagenes_links[0][4];
       
-      if (this.settings.images_links.length > 1) 
+      if (this.settings.imagenes_links.length > 1) 
       {
         this.box_skitter.find('.prev_button').click(function() {
           if (self.settings.is_animating == false) {
@@ -480,10 +480,10 @@
             self.settings.image_i -= 2;
             
             if (self.settings.image_i == -2) {
-              self.settings.image_i = self.settings.images_links.length - 2;
+              self.settings.image_i = self.settings.imagenes_links.length - 2;
             } 
             else if (self.settings.image_i == -1) {
-              self.settings.image_i = self.settings.images_links.length - 1;
+              self.settings.image_i = self.settings.imagenes_links.length - 1;
             }
             
             self.jumpToImage(self.settings.image_i);
@@ -539,15 +539,15 @@
         {
           var preview = $('<div class="preview_slide"><ul></ul></div>');
           
-          for (var i = 0; i < this.settings.images_links.length; i++) {
+          for (var i = 0; i < this.settings.imagenes_links.length; i++) {
             var li = $('<li></li>');
             var img = $('<img />');
-            img.attr('src', this.settings.images_links[i][0]);
+            img.attr('src', this.settings.imagenes_links[i][0]);
             li.append(img);
             preview.find('ul').append(li);
           }
           
-          var width_preview_ul = parseInt(this.settings.images_links.length * 100);
+          var width_preview_ul = parseInt(this.settings.imagenes_links.length * 100);
           preview.find('ul').width(width_preview_ul);
           $(class_info).append(preview);
           
@@ -595,22 +595,22 @@
         self.enableNavigationKeys();
       }
       
-      this.loadImages();
+      this.loadimagenes();
     },
     
     /**
-     * Load images
+     * Load imagenes
      */
-    loadImages: function () 
+    loadimagenes: function () 
     {
       var self = this;
       
       var loading = $('<div class="loading">Loading</div>');
       this.box_skitter.append(loading);
-      var total = this.settings.images_links.length;
+      var total = this.settings.imagenes_links.length;
       
       var u = 0;
-      $.each(this.settings.images_links, function(i)
+      $.each(this.settings.imagenes_links, function(i)
       {
         var self_il = this;
         var loading = $('<span class="image_loading"></span>');
@@ -627,7 +627,7 @@
           }
         }).error(function () {
           self.box_skitter.find('.loading, .image_loading, .image_number, .next_button, .prev_button').remove();
-          self.box_skitter.html('<p style="color:white;background:black;">Error loading images. One or more images were not found.</p>');
+          self.box_skitter.html('<p style="color:white;background:black;">Error loading imagenes. One or more imagenes were not found.</p>');
         }).attr('src', self_il[0]);
       });
     }, 
@@ -679,7 +679,7 @@
       self.box_skitter.mouseover(mouseOverInit);
       self.box_skitter.find('.next_button').mouseover(mouseOverInit);
       
-      if (self.settings.images_links.length > 1 && !init_pause) {
+      if (self.settings.imagenes_links.length > 1 && !init_pause) {
         if (self.settings.auto_play) {
           self.timer = setTimeout(function() { self.nextImage(); }, self.settings.interval);
         }
@@ -757,8 +757,8 @@
             
       if (self.settings.progressbar) self.hideProgressBar();
       
-      animation_type = (this.settings.animation == '' && this.settings.images_links[this.settings.image_i][2]) ? 
-        this.settings.images_links[this.settings.image_i][2] : (this.settings.animation == '' ? 'default' : this.settings.animation);
+      animation_type = (this.settings.animation == '' && this.settings.imagenes_links[this.settings.image_i][2]) ? 
+        this.settings.imagenes_links[this.settings.image_i][2] : (this.settings.animation == '' ? 'default' : this.settings.animation);
       
       // RandomUnique
       if (animation_type == 'randomSmart') 
@@ -2293,7 +2293,7 @@
         box_clone_next.find('img').css({left:_vleft_image, top:0});
         box_clone_next.css({top:0, left:-width_box, width:width_box, height:height_box});
         
-        // Container box images
+        // Container box imagenes
         var box_clone_container = this.getBoxClone();
         box_clone_container.html('').append(box_clone).append(box_clone_next);
         box_clone_container.css({top:0, left:_ileftc, width:width_box, height:height_box});
@@ -2476,7 +2476,7 @@
 
     // Actual config for animation
     setActualLevel: function() {
-      if ($.isFunction(this.settings.imageSwitched)) this.settings.imageSwitched(this.settings.image_i, this);
+      if ($.isFunction(this.settings.imageneswitched)) this.settings.imageneswitched(this.settings.image_i, this);
       this.setImageLink();
       this.addClassNumber();
       this.hideBoxText();
@@ -2486,10 +2486,10 @@
     // Set image and link
     setImageLink: function()
     {
-      var name_image = this.settings.images_links[this.settings.image_i][0];
-      var link_image = this.settings.images_links[this.settings.image_i][1];
-      var label_image = this.settings.images_links[this.settings.image_i][3];
-      var target_link = this.settings.images_links[this.settings.image_i][4];
+      var name_image = this.settings.imagenes_links[this.settings.image_i][0];
+      var link_image = this.settings.imagenes_links[this.settings.image_i][1];
+      var label_image = this.settings.imagenes_links[this.settings.image_i][3];
+      var target_link = this.settings.imagenes_links[this.settings.image_i][4];
       
       this.settings.image_atual = name_image;
       this.settings.link_atual = link_image;
@@ -2511,7 +2511,7 @@
     increasingImage: function()
     {
       this.settings.image_i++;
-      if (this.settings.image_i == this.settings.images_links.length) {
+      if (this.settings.image_i == this.settings.imagenes_links.length) {
         this.settings.image_i = 0;
       }
     },
@@ -2682,7 +2682,7 @@
           self.setHideTools('out');
           self.clearTimer(true);
           
-          if (!self.settings.is_animating && self.settings.images_links.length > 1) {
+          if (!self.settings.is_animating && self.settings.imagenes_links.length > 1) {
             self.timer = setTimeout(function() { self.completeMove(); }, self.settings.interval - self.settings.elapsedTime);
             self.box_skitter.find('.image_main').attr({'src': self.settings.image_atual});
             self.box_skitter.find('.image a').attr({'href': self.settings.link_atual});
@@ -2977,7 +2977,7 @@
           
           if (!self.settings.stop_over) { 
             self.clearTimer(true);
-            if (!self.settings.is_animating && self.settings.images_links.length > 1) {
+            if (!self.settings.is_animating && self.settings.imagenes_links.length > 1) {
               self.timer = setTimeout(function() { self.completeMove(); }, self.settings.interval - self.settings.elapsedTime);
               self.box_skitter.find('.image_main').attr({'src': self.settings.image_atual});
               self.box_skitter.find('.image a').attr({'href': self.settings.link_atual});
@@ -3190,7 +3190,7 @@
         self.clearTimer(true);
       });
       $(window).bind('focus', function(){
-        if ( self.settings.images_links.length > 1 ) {
+        if ( self.settings.imagenes_links.length > 1 ) {
           self.settings.is_blur = false;  
           
           if  (self.settings.elapsedTime == 0) {

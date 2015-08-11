@@ -2,17 +2,17 @@
 <skitter>
 	<slide>
 		<link>#directionTop</link>
-		<image type="directionTop">images/001.jpg</image>
+		<image type="directionTop">imagenes/001.jpg</image>
 		<label><![CDATA[<p>directionTop</p>]]></label>
 	</slide>
 	<slide>
 		<link>#cubeSize</link>
-		<image type="cubeSize">images/002.jpg</image>
+		<image type="cubeSize">imagenes/002.jpg</image>
 		<label><![CDATA[<p>cubeSize</p>]]></label>
 	</slide>
 	<slide>
 		<link>#paralell</link>
-		<image type="paralell">images/003.jpg</image>
+		<image type="paralell">imagenes/003.jpg</image>
 		<label><![CDATA[<p>paralell</p>]]></label>
 	</slide>
 </skitter>

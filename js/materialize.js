@@ -2907,7 +2907,7 @@ $(document).ready(function(){
         captionTransition($(this), 0);
       });
 
-      // Set initial dimensions of images
+      // Set initial dimensions of imagenes
       // $slides.find('img').each(function () {
       //   $(this).load(function () {
       //     if ($(this).width() < $(this).parent().width()) {
