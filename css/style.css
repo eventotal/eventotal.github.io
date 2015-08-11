@@ -96,7 +96,7 @@ footer.page-footer {
 .main-subtitle{
 	color: white;
 	}
-.main-row{
+.main-row,link-evento{
 	padding: 40px;
 	}
 .padding-btn{
