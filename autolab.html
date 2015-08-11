@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
-		<title>EVENTOTAL AUTOLAB</title>
+		<!--ETIQUETAS META-->
+		<!--codificacion--> 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<!--resposive--> 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+		<!--lenguaje--> 		<meta content='es' http-equiv='content-language'/>
+		<!--descripcion--> 		<meta content='' name='description'/>
+		<!--titulo--> 			<title>EVENTOTAL AUTOLAB</title>
+
 		<!-- CSS  -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 		<link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 		<link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
-
+		
 		<meta http-equiv="expires" content="0"/>
 	</head>
 	<body>
@@ -41,42 +45,7 @@
 	<!--SCRIPT DE EVENTOS AUTOMATICOS-->
 	<script>
 		//	JSON OBJECT, PARA GENERAR LOS EVENTOS
-		var eventos =[
-			{
-				"nombre" 	: "Rumba:Grito de independencia",
-				"miniatura"	: "imagenes/plan.jpg",
-				"ttNombre" 	: "#Rumba:Grito de independencia",
-				"fecha" 	: "sábado 18 de julio",
-				"otrasFechas" : "AJA",
-				"hora" 		: "X hora",
-				"precio" 	: "10000",
-				"Enlace" 	: "enlace",
-				"lugar"		: "jejeje",
-				"ttLugar"	: "mmm",
-				"contacto" 	: "523434 ",
-				"URLImagen"	: "imagenes/plan.jpg",
-				"descripcion": "una rum,bita ahi",
-				"categoria"	:"rumba",
-				"hashtag"	:"#rumba",
-			},
-			{
-				"nombre" 	: "Media Maraton Bucaramanga",
-				"miniatura"	: "imagenes/plan.jpg",
-				"ttNombre" 	: "@mediamaratonbga",
-				"fecha" 	: "domingo 13 de septiembre ",
-				"otrasFechas" : "no se",
-				"hora" 		: "X hora",
-				"precio" 	: "50000",
-				"Enlace" 	: "enlaceMarathon",
-				"lugar"		: "la rontonda al lado del Kai",
-				"ttLugar"	: "@LarotondaSegura",
-				"telefono" 	: "523434 ",
-				"URLImagen"	: "imagenes/plan.jpg",
-				"descripcion": "una maraton, tio.",
-				"categoria"	:"deporte",
-				"Hashtag"	:"#MaratonBga",
-			}
-		];
+		var eventos =[{"categoria":"Cultural","nombre":"Cafe Cientifico","fechaTecnica":"2015-08-11T05:00:00.000Z","fecha":"martes 11 de agosto ","hora":"6:30 pm","otrasFechas":"","precio":"libre","enlace":"https://www.facebook.com/lacasadellibrototal","lugar":"Casa del libro total","contacto":"","contactoFijo":"","contactoEmail":"","URLImagen":"","miniatura":"https://farm1.staticflickr.com/442/20483578732_a3ae1f65c5.jpg","descripcion":"","hashtag1":"","hastag2":""},{"categoria":"Cultural","nombre":"Exposicion Artistica: 4º Lat Nord; 53º Long Ouest Paysage au Bord","fechaTecnica":"2015-08-11T05:00:00.000Z","fecha":"martes 11 de agosto ","hora":"7:00 pm","otrasFechas":"del 4 al 31 de agosto","precio":"libre","enlace":"https://goo.gl/8m7brY","lugar":"Calle 42 # 37 - 19, Alianza Francesa, ","contacto":"","contactoFijo":"","contactoEmail":"","URLImagen":"https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/L%C3%A9opold_Senghor%2C_Pic%2C_5.jpg/511px-L%C3%A9opold_Senghor%2C_Pic%2C_5.jpg","miniatura":"http://circuitodejazzcolombia.com/images/Alianza_Francesa-logo-33E324EC60-seeklogo_com.gif","descripcion":"","hashtag1":"","hastag2":""}];
 		// OBJETO para el html
 		var formato={
 			"f1" 	: '<div class="section grey lighten-3 collapsible-header collapsible"><div class="container" ><ul class="collapsible z-depth-0 no-padding no-margin"><li><div class="row collapsible-header" style="margin-bottom: 0;"><div class="col s12 m3 l3 center"><img class="responsive-img" width="150" height="150" src="',
@@ -134,6 +103,18 @@
 			}
 			document.getElementById("seccion-eventos").innerHTML = out;
 		}
+	</script>
+	<!--	SCRIPT PARA EDITAR, TITULOS DE LA PAGINA WEB, Y EL SEO-->
+
+	<script>
+		var seo=[{
+			"titulo"	:"Eventotal Bucaramanga - todos los eventos - hoy",
+			"mes"		:"",
+			"fecha"		:"",
+			"color"		:"",
+		}
+				]
+
 
 	</script>
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
