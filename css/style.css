@@ -1,133 +1,132 @@
 /* Custom Stylesheet */
 /**
- * Use this file to override Materialize files so you can update
- * the core Materialize files in the future
- *
- * Made By MaterializeCSS.com
- */
+* Use this file to override Materialize files so you can update
+* the core Materialize files in the future
+*
+* Made By MaterializeCSS.com
+*/
 
 nav ul a,
 nav .brand-logo {
-  color: white;
+	color: white;
 }
 p {
-  line-height: 2rem;
+	line-height: 2rem;
 }
-.button-collapse {
-  color: #880e4f ;
-}
-
 .parallax-container {
-  min-height: 300px;
-  line-height: 0;
-  height: auto;
-  color: rgba(255,255,255,.9);
+	min-height: 300px;
+	line-height: 0;
+	height: auto;
+	color: rgba(255,255,255,.9);
 }
 .parallax-mini{
-  min-height: 100px;
+	min-height: 100px;
 }
-  .parallax-container .section {
-    width: 100%;
-  }
+.parallax-container .section {
+	width: 100%;
+}
 
 @media only screen and (max-width : 992px) {
-  .parallax-container .section {
-    position: absolute;
-    top: 40%;
-  }
-  #index-banner .section {
-    top: 10%;
-  }
+	.parallax-container .section {
+		position: absolute;
+		top: 40%;
+	}
+	#index-banner .section {
+		top: 10%;
+	}
 }
 
 @media only screen and (max-width : 600px) {
-  #index-banner .section {
-    top: 0;
-  	}
+	#index-banner .section {
+		top: 0;
 	}
+}
 
 
 .icon-block {
-  padding: 0 15px;
-	}
+	padding: 0 15px;
+}
 
 footer.page-footer {
-  margin: 0;
-	}
+	margin: 0;
+}
 
 .z-depth-0 {
-  -webkit-box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.2), 0 0px 0px 0 rgba(0, 0, 0, 0.22);
-  -moz-box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.2), 0 0px 0px 0 rgba(0, 0, 0, 0.22);
-  box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.2), 0 0px 0px 0 rgba(0, 0, 0, 0.22); 
+	-webkit-box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.2), 0 0px 0px 0 rgba(0, 0, 0, 0.22);
+	-moz-box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.2), 0 0px 0px 0 rgba(0, 0, 0, 0.22);
+	box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.2), 0 0px 0px 0 rgba(0, 0, 0, 0.22); 
 }
 
 .extra{
-  height: 200px;
-  vertical-align: middle;
-  }
-  
-  .center-img{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-	}
-	.center-btn 
-	{ text-align: center;
-	  vertical-align: middle;
-	}
+	height: 200px;
+	vertical-align: middle;
+}
+
+.center-img{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+.center-btn 
+{ text-align: center;
+	vertical-align: middle;
+}
 .no-margin{
 	margin:0 !important;}
 .subtitulo{
 	font-weight: bold;
-	}
+}
 .hoy-wrapper{
-    background-image: url("hoy01.jpg");
+	background-image: url("hoy01.jpg");
 	background-size: cover;
-	
-	}
+
+}
 .manana-wrapper{
-    background-image: url("manana01.jpg");
+	background-image: url("manana01.jpg");
 	background-size: cover;
-	}
+}
 .semana-wrapper{
-    background-image: url("semana01.jpg");
+	background-image: url("semana01.jpg");
 	background-size: cover;
-	}
+}
 .main-subtitle{
 	color: white;
-	}
+}
 .main-row,link-evento{
 	padding: 40px;
-	}
+}
 .padding-btn{
 	padding: 10px !important;
-	}
+}
 .slider-landing{
 	height: 500px !important;;
-	 width: 100%;
-	 position: relative;
-	 /* top: 0; */
-	 left: 0;
-	 right: 0;
-	 /* bottom: 0;*/ 
-	}
+	width: 100%;
+	position: relative;
+	/* top: 0; */
+	left: 0;
+	right: 0;
+	/* bottom: 0;*/ 
+}
 .standar-height{
 	height: 100px;
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
 	border-radius: 5px;
-	}
+}
 .caption{
 	background-color:rgba(0,0,0,0.5);
 	padding: 40px;
 }
 .caption.dark{
 	background-color:rgba(0,0,0,0.8);
-		-webkit-border-radius: 8px;
+	-webkit-border-radius: 8px;
 	-moz-border-radius: 8px;
 	border-radius: 8px;
 }
 
 .gracias,.gracias>.slides{
-	height: 800px !important;;
+	height: 800px !important;
+}
+.nav-wrapper{
+	background-color: #c2185b;
 }
